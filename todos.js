@@ -13,9 +13,6 @@ if (Meteor.isClient) {
       //prevent default browser form submit
       event.preventDefault();
 
-      console.log(event);
-      console.log(event.target.task.value);
-
       //Get value form element
       var text = event.target.task.value;
 
@@ -39,12 +36,24 @@ if (Meteor.isClient) {
         $set: {checked: ! this.checked}
       });
     },
-    'click .delete': function(){
+    'click #delete': function(){
       Tasks.remove(this._id);
     }
-  });
+  // 'click #edit' : function(){
+  //   $( ".edit-task" ).show();
+  // }
+  // 'submit .edit-task': function(event){
+  //   event.preventDefault();
 
-};
+  //   var text = event.target.edit.value;
+
+  //   if(text){
+  //       Tasks      
+  //   }
+  // }
+
+});
+}
 
 if (Meteor.isServer) {
   Meteor.startup(function () {

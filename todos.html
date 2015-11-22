@@ -9,6 +9,10 @@
             <form class="new-task">
                 <input type="text" name="task" placeholder='type to add new task...'>
             </form>
+            <!-- <form class="edit-task">
+    <input type="text" name="edit" value="{{editTask}}">
+</form>
+ -->
         </header>
         <ul>
             {{#each tasks}} {{>task}} {{/each}}
@@ -19,6 +23,8 @@
     <li class="{{#if checked}}checked{{/if}}">
         <b>{{text}}</b> &nbsp;&nbsp; <i>Created: {{createdAt}}</i>
         <input type="checkbox" name='checked' class="toggle-checked">
-        <button class="delete">&times;</button>
+        <button id="delete" class="btn btn-delete">&times;</button>
+        <!-- <button id='edit' class="btn btn-warning">Edit</button>
+ -->
     </li>
 </template>
